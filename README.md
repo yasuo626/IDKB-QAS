@@ -13,17 +13,17 @@
 
 ### IDKB-Core
 > The IDKB module includes communication, operation management and maintenance of multiple databases and language models, as well as analysis and processing of system input files and texts. Therefore, it is necessary to first analyze and implement the core functions of the module and package it into a kernel module package with the main function Development support. The main functions of the IDKB-Core kernel module are shown in Figure 1, including six parts: document loading, document parsing and segmentation, vector database management and maintenance, large model communication, modular function direct calling support, and kernel log management.
-![alt text](IDKB-core.png)
+![alt text](./IDKB-core.jpg)
 
 ### IDKB
->The overall architecture and workflow of the IDKB question and answer system. The system mainly encapsulates the main functions and provides interfaces based on the kernel. The file analyzer synchronizes the information and content blocks of uploaded files to the SQL database and vector database respectively. In addition to providing us with text generation, the language model also provides support for vector representation of text![alt text](IDKB-QAS.png)
+>The overall architecture and workflow of the IDKB question and answer system. The system mainly encapsulates the main functions and provides interfaces based on the kernel. The file analyzer synchronizes the information and content blocks of uploaded files to the SQL database and vector database respectively. In addition to providing us with text generation, the language model also provides support for vector representation of text![alt text](./IDKB-QAS.jpg)
 
 ### HKSR
-> Most of the current knowledge bases of RAG projects do not implement multi-user support or the files of the knowledge base are fixed in the knowledge base. These methods cannot be used in multi-user scenarios with limited resources. In order to solve the user and resource limitation issues of RAG, we designed the HKSR storage module (shown in Figure 4) to implement multi-user dynamic update support for the knowledge base and give full play to the language model generation capabilities. Specifically, to realize the dynamic update of knowledge base files, we constructed the file database object File, the knowledge base database object KnowledgeBase and the conversation database object ChatModel respectively. The files and knowledge base objects correspond to the files and knowledge base objects of the vector database in the kernel. These two objects must ensure the consistency of operations and prevent data inconsistencies. At the same time, it is necessary to design a synchronization method for the two database objects. In this project, we encapsulate the operations of vector objects into structured database object operations to ensure the consistency of database operations, exception handling, and response.![alt text](HKSR.png)
+> Most of the current knowledge bases of RAG projects do not implement multi-user support or the files of the knowledge base are fixed in the knowledge base. These methods cannot be used in multi-user scenarios with limited resources. In order to solve the user and resource limitation issues of RAG, we designed the HKSR storage module (shown in Figure 4) to implement multi-user dynamic update support for the knowledge base and give full play to the language model generation capabilities. Specifically, to realize the dynamic update of knowledge base files, we constructed the file database object File, the knowledge base database object KnowledgeBase and the conversation database object ChatModel respectively. The files and knowledge base objects correspond to the files and knowledge base objects of the vector database in the kernel. These two objects must ensure the consistency of operations and prevent data inconsistencies. At the same time, it is necessary to design a synchronization method for the two database objects. In this project, we encapsulate the operations of vector objects into structured database object operations to ensure the consistency of database operations, exception handling, and response.![alt text](./HKSR.jpg)
 
 ## 环境要求
 
->The actual working mode of the IDKB-QAS system. The service node provides front-end business services, and the model node deploys a local language model. The system is mainly deployed on the working node, communicates with the model node and the cloud, and provides database and API support for the server node. The entire system provides a total of 25 APIs to ensure the stable operation of the system![alt text](structure_zh.png)
+>The actual working mode of the IDKB-QAS system. The service node provides front-end business services, and the model node deploys a local language model. The system is mainly deployed on the working node, communicates with the model node and the cloud, and provides database and API support for the server node. The entire system provides a total of 25 APIs to ensure the stable operation of the system![alt text](./structure_zh.png)
 
 
 ### servernode
@@ -50,7 +50,7 @@ chatglm3-6b
 
 ## 对比
 
-![alt text](compare.png)
+![alt text](./compare.jpg)
 
 
 # icense
